@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-word',
@@ -7,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WordComponent implements OnInit {
   @Input() word;
-  constructor() { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
+  }
+
+  remove() {
+    this.store.dispatch({ type: 'REMOVE_WORD', id: this.word.id });
   }
 
 }

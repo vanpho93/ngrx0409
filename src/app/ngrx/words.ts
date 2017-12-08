@@ -6,5 +6,11 @@ const defaultWords = [
 ];
 
 export function wordsReducer(state = defaultWords, action) {
+    if (action.type === 'REMOVE_WORD') {
+        return state.filter(word => word.id !== action.id);
+    }
+    if (action.type === 'ADD_WORD') {
+        return state.concat(action.word);
+    }
     return state;
 }

@@ -1,5 +1,5 @@
-<h3 [style.color]="'green'">
+<h3 [style.color]="word.isMemorized ? 'green' : 'red'">
   {{ word.en }}
 </h3>
-<p>mot</p>
-<button>Remove</button>
+<p>{{ word.vn }}</p>
+<button (click)="remove()">Remove</button>
