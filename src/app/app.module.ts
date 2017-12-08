@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { counterReducer } from './ngrx/counter';
+import { ListWordsComponent } from './list-words/list-words.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListWordsComponent
   ],
   imports: [
     BrowserModule,
