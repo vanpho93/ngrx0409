@@ -1,4 +1,4 @@
-<div *ngFor="let word of words">
+<div *ngFor="let word of words | async">
   <h3 [style.color]="word.isMemorized ? 'green' : 'red'">
     {{ word.en }}
   </h3>

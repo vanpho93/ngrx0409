@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-list-words',
@@ -7,15 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ListWordsComponent implements OnInit {
-  words = [
-    { id: '1a', en: 'one', vn: 'mot', isMemorized: true },
-    { id: '2a', en: 'two', vn: 'hai', isMemorized: false },
-    { id: '3a', en: 'three', vn: 'ba', isMemorized: false },
-    { id: '4a', en: 'four', vn: 'bon', isMemorized: true },
-  ];
-  constructor() { }
+  words: Observable<any[]>;
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
+    this.words = this.store.select('words');
   }
 
 }

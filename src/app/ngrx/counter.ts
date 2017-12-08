@@ -1,4 +1,3 @@
-import { Action } from '@ngrx/store';
 // Quan ly trang thai cua ung dung
 const defaultValue = 10;
 
