@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { AppState, Word } from '../types';
 @Component({
   selector: 'app-word-form',
   templateUrl: './word-form.component.html',
@@ -8,7 +9,7 @@ import { Store } from '@ngrx/store';
 })
 export class WordFormComponent implements OnInit {
   myForm: FormGroup;
-  constructor(private fb: FormBuilder, private store: Store<any>) { }
+  constructor(private fb: FormBuilder, private store: Store<AppState>) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -18,7 +19,7 @@ export class WordFormComponent implements OnInit {
   }
   onSubmit() {
     const { txtEn, txtVn } = this.myForm.value;
-    const word = {
+    const word: Word = {
       id: Math.random() + '',
       en: txtEn,
       vn: txtVn,

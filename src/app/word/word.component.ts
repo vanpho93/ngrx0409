@@ -17,4 +17,8 @@ export class WordComponent implements OnInit {
     this.store.dispatch({ type: 'REMOVE_WORD', id: this.word.id });
   }
 
+  toggle() {
+    this.store.dispatch({ type: 'TOGGLE_IS_MEMORIZED', id: this.word.id });
+  }
+
 }
