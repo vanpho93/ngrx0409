@@ -1,7 +1,3 @@
 <div *ngFor="let word of words | async">
-  <h3 [style.color]="word.isMemorized ? 'green' : 'red'">
-    {{ word.en }}
-  </h3>
-  <p>{{ word.vn }}</p>
-  <button>Remove</button>
+  <app-word [word]="word"></app-word>
 </div>

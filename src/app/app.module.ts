@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { counterReducer } from './ngrx/counter';
 import { wordsReducer } from './ngrx/words';
 import { ListWordsComponent } from './list-words/list-words.component';
+import { WordComponent } from './word/word.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListWordsComponent
+    ListWordsComponent,
+    WordComponent
   ],
   imports: [
     BrowserModule,
