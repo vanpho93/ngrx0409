@@ -33,6 +33,7 @@ export class WordFormComponent implements OnInit {
     this.wordService.addWord(word)
     .then(res => {
       this.store.dispatch({ type: 'ADD_WORD', word: res.word });
+      this.myForm.reset();
     })
     .catch(err => console.log(err));
     // this.store.dispatch({ type: 'ADD_WORD', word });
