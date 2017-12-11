@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
@@ -21,6 +22,7 @@ import { WordFormComponent } from './word-form/word-form.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
     StoreModule.forRoot({ counter: counterReducer, words: wordsReducer })
   ],
   providers: [],
