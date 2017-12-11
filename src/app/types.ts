@@ -1,5 +1,5 @@
 export interface Word {
-    id: string;
+    _id: string;
     en: string;
     vn: string;
     isMemorized: boolean;
